@@ -22,7 +22,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Add User - Formula One</title>
+        <title>Update User - Formula One</title>
     </head>
     <body>
         <form method="Post">
