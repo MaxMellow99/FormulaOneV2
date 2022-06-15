@@ -22,7 +22,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Update User - Formula One</title>
+        <title>User - Formula One</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body>
@@ -36,7 +36,7 @@
             Is Active: <input type="number" name="isactive" value="<?php echo $user->userIsActive ?>" max="1"><br>
             Profile Picture: <input type="file" name="image"><br>
             <input type="submit" value="Update"><br>
-            <a href="admin.php">Cancel</a>
+            <a href="user.php">Cancel</a>
         </form>
     </body>
 </html>

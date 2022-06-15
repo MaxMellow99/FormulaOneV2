@@ -1,5 +1,10 @@
 <?php
     require_once "database.php";
+    require_once "managers/ResultManager.php";
+
+    if(isset($_GET['resultId'])) {
+        ResultManager::DeleteResult($_GET['resultId']);
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -9,11 +14,45 @@
     </head>
     <body>
         <ul>
-            <li><a href="admin.php">Admin</a></li>
+            <li><a href="user.php">User</a></li>
             <li><a href="driver.php">Driver</a></li>
             <li><a href="race.php">Race</a></li>
             <li><a href="result.php">Result</a></li>
             <li><a href="standing.php">Standing</a></li>
         </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Position</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Round</th>
+                    <th>Track</th>
+                    <th>Points</th>
+                    <th></th>
+                    <th><a href="addResult.php">Add</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach (ResultManager::GetResult() as $result) {
+                        echo '<tr>';
+                        echo '<td>'.$result->resultId.'</td>';
+                        echo '<td>'.$result->resultPosition.'</td>';
+                        echo '<td>'.$result->driverFirstname.'</td>';
+                        echo '<td>'.$result->driverLastname.'</td>';
+                        echo '<td>'.$result->raceRound.'</td>';
+                        echo '<td>'.$result->raceTrack.'</td>';
+                        echo '<td>'.$result->resultPoints.'</td>';
+                        echo '<td><a href="updateResult.php?resultId='.$result->resultId.'">Update</a></td>';
+                        echo '<td><a href="result.php?resultId='.$result->resultId.'">Delete</a></td>';
+                        echo '</tr>';
+                    }
+                ?>
+            </tbody>
+        </table>
+
     </body>
 </html>

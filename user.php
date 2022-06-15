@@ -9,12 +9,12 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Admin - Formula One</title>
+        <title>User - Formula One</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body>
         <ul>
-            <li><a href="admin.php">Admin</a></li>
+            <li><a href="user.php">User</a></li>
             <li><a href="driver.php">Driver</a></li>
             <li><a href="race.php">Race</a></li>
             <li><a href="result.php">Result</a></li>

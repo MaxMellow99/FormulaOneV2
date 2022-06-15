@@ -9,7 +9,7 @@
     </head>
     <body>
         <ul>
-            <li><a href="admin.php">Admin</a></li>
+            <li><a href="user.php">User</a></li>
             <li><a href="driver.php">Driver</a></li>
             <li><a href="race.php">Race</a></li>
             <li><a href="result.php">Result</a></li>
