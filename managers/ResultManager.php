@@ -41,7 +41,7 @@ class ResultManager
         $stmt->bindValue(2, $pDriver);
         $stmt->bindValue(3, $pRace);
         $stmt->bindValue(4, $pPoints);
-        $stmt->bindValue(4, $pId);
+        $stmt->bindValue(5, $pId);
         $stmt->execute();
     }
 

@@ -4,12 +4,15 @@
     require_once "managers/DriverManager.php";
     require_once "managers/RaceManger.php";
 
+    $result = ResultManager::GetSpecificRace($_GET['resultId']);
+
     if($_POST) {
-        ResultManager::AddResult(
+        ResultManager::UpdateResult(
+                $_GET['resultId'],
                 $_POST['position'],
                 $_POST['driver'],
                 $_POST['race'],
-                $_POST['points']
+                $_POST['points'],
         );
         header('location:result.php');
     }
@@ -22,27 +25,25 @@
     </head>
     <body>
         <form method="Post">
-            Position: <input type="number" name="position"><br>
+            Position: <input type="number" name="position" value="<?php echo $result->resultPosition ?>"><br>
             Driver: <?php
                 echo '<select name="driver">';
                     foreach (DriverManager::GetDriver() as $driver) {
-                        echo '<<option selected disabled hidden>Kies</option>';
-                        echo "<option class='form-select w-75' value='$driver->driverId'>$driver->driverFirstname $driver->driverLastname</option>";
+                        echo "<option value='$driver->driverId'>$driver->driverFirstname $driver->driverLastname</option>";
                     }
                 echo '</select>';
                 echo '<br>';
             ?>
-            Race: <?php
+            Driver: <?php
                 echo '<select name="race">';
-                    foreach (RaceManger::GetRace() as $race) {
-                        echo '<<option selected disabled hidden>Kies</option>';
-                        echo "<option class='form-select w-75' value='$race->raceId'>$race->raceTrack</option>";
-                    }
+                foreach (RaceManger::GetRace() as $race) {
+                    echo "<option value='$race->raceId'>$race->raceTrack</option>";
+                }
                 echo '</select>';
                 echo '<br>';
             ?>
-            Points: <input type="number" name="points"><br>
-            <input type="submit" value="Add"><br>
+            Position: <input type="number" name="points" value="<?php echo $result->resultPoints ?>"><br>
+            <input type="submit" value="Update"><br>
             <a href="race.php">Cancel</a>
         </form>
     </body>
