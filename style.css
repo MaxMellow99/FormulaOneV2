@@ -1,0 +1,190 @@
+body{
+    background-color: #4A4A4A;
+    overflow-x: hidden;
+}
+#nav-top-color{
+    background-color: #2F2F2F;
+}
+#nav-main-color{
+    background-color: #242323;
+}
+#nav-top{
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+}
+#header-logo{
+    width: 15%;
+}
+#nav-align-right{
+    position: relative;
+    /* right: 10px; */
+    /* float: right; */
+    margin-left: auto;
+    margin-right: 0;
+}
+.loginlogout{
+    border-radius: 25px;
+    padding-left: 15px !IMPORTANT;
+    padding-right: 15px !important;
+    margin: 5PX;
+}
+#login_logout{
+    cursor: pointer;
+    color: white !important;
+}
+#acc-profile-img{
+    width: 50px;
+    border-radius: 15px;
+}
+#acc-profile-img-bigger{
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    left: 25%;
+    position: relative;
+}
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background-color: black;
+}
+
+
+
+#acc-body-container{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+#acc-sidebar{
+    width: 30%;
+    height: 100vh;
+    float: inherit;
+    border-right: 1px solid black;
+    color: white;
+}
+#acc-body{
+    height: 100vh;
+    width: 70%;
+    float: inherit;
+}
+
+.admin-backend{
+    display: none;
+}
+#acc-change-profilepic{
+    cursor: pointer;
+}
+.acc-text-sidebar{
+    text-align: center;
+}
+.acc-text-sidebar-smaller{
+    text-align: center;
+}
+
+#vertical-nav{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.vertical-nav-border{
+    border-bottom: 1px solid black;
+}
+.nav-link{
+    padding: 0.7rem 1rem;
+    color: white;
+}
+.acc-page-tabs{
+    width: 100%;
+    height: auto;
+   
+    position: absolute;
+    display: none;
+    margin-left: 5%;
+}
+#gbrk-form{
+    width: 30vw;
+}
+
+.line-black{
+    width: 50vw;
+    border-bottom: 2px solid black;
+}
+
+#welcome_text{
+    vertical-align: middle;
+    position: relative;
+    top: 25%;
+    right: 10%;
+}
+.change-info{
+    color: aqua;
+}
+#top-3-drivers{
+    width: 55vw;
+    height: 60%;
+}
+
+#h1-text-home{
+    margin-top: 5%;
+}
+#second-place-container{
+    position: relative;
+    float: right;
+    margin-right: 5%;
+    margin-top: 17%;
+}
+#third-place-container{
+    position: relative;
+    float: left;
+    margin-left: 5%;
+    margin-top: 30%;
+}
+#first-place-container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7%;
+}
+.img-fit{
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.top-drivers-container{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+}
+
+#winner-podium-home{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 50%;
+}
+
+
+.driver-pf-names{
+    position: relative;
+    left: 5%;
+    font-size: 2vw;
+    color: white;
+}
+
+.rest-driver-names{
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+}
+.rest-driver-imgs{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    margin: auto;
+}
