@@ -75,6 +75,10 @@ class GambleManager
             } else {
                 $differencePerDriver = abs($item->resultaat - $pPosition);
                 $pointsPerDriver = 8 - $differencePerDriver;
+
+                if (str_contains($pointsPerDriver, "-")) {
+                    $pointsPerDriver = 0;
+                }
             }
 
         }
@@ -85,6 +89,13 @@ class GambleManager
         $stmt->bindValue(3, $pRace);
         $stmt->bindValue(4, $pDriver);
         $stmt->bindValue(5, $pUser);
+        $stmt->execute();
+    }
+
+    public static function ClearSorting() {
+        globaL $conn;
+
+        $stmt = $conn->prepare('TRUNCATE TABLE sortingtable');
         $stmt->execute();
     }
 

@@ -3,8 +3,12 @@
     require_once "managers/GambleManager.php";
     require_once "managers/DriverManager.php";
 
+    if($_POST) {
+        GambleManager::ClearSorting();
+    }
     for ($i = 1; $i <= 20; $i++) {
         if(isset($_POST["driver$i"])) {
+
             GambleManager::CalculateGamble(
                      $i,
                     "5",
