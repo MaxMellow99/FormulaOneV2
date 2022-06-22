@@ -5,7 +5,7 @@ require_once "./database.php";
 
 class standingmanager{
 
-    public function getAllStandings(){
+    public static function getStanding(){
         global $conn;
 
         $stmt = $conn->prepare("SELECT 

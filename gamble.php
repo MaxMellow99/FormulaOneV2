@@ -1,6 +1,11 @@
 <?php
     require_once "database.php";
     require_once "managers/GambleManager.php";
+
+    if (isset($_SESSION['id'])) {
+        $personmanager = new personmanager();
+        $person = $personmanager->getAllById($_SESSION['id']);
+    }
 ?>
 <!doctype html>
 <html lang="en">
