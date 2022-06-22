@@ -126,11 +126,12 @@ body{
 }
 #top-3-drivers{
     width: 55vw;
-    height: 60%;
+    height: 55vw;
 }
 
 #h1-text-home{
     margin-top: 5%;
+    margin-bottom: 15%;
 }
 #second-place-container{
     position: relative;

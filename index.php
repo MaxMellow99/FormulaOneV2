@@ -123,13 +123,135 @@ $standings = $standingmanager->getAllStandings();
             </div>
             <div class="col-4 col-md-4">
                 <h3 class="rest-driver-names">#6</h3>
-                <h1 class="rest-driver-names"><?php echo $standings[4]->driverFirstname . ' '  . $standings[4]->driverLastname; ?></h1>
+                <h1 class="rest-driver-names"><?php echo $standings[5]->driverFirstname . ' '  . $standings[5]->driverLastname; ?></h1>
                 <div class="rest-driver-imgs">
-                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[4]->driverPicture; ?>"></img>
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[5]->driverPicture; ?>"></img>
                 </div>
             </div>
         </div>
-
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#7</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[6]->driverFirstname . ' '  . $standings[6]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[6]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#8</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[7]->driverFirstname . ' '  . $standings[7]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[7]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#9</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[8]->driverFirstname . ' '  . $standings[8]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[8]->driverPicture; ?>"></img>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#10</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[9]->driverFirstname . ' '  . $standings[9]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[9]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#11</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[10]->driverFirstname . ' '  . $standings[10]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[10]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#12</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[11]->driverFirstname . ' '  . $standings[11]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[11]->driverPicture; ?>"></img>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#13</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[12]->driverFirstname . ' '  . $standings[12]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[12]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#14</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[13]->driverFirstname . ' '  . $standings[13]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[13]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#15</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[14]->driverFirstname . ' '  . $standings[14]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[14]->driverPicture; ?>"></img>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#16</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[15]->driverFirstname . ' '  . $standings[15]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[15]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#17</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[16]->driverFirstname . ' '  . $standings[16]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[16]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#18</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[17]->driverFirstname . ' '  . $standings[17]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[17]->driverPicture; ?>"></img>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#19</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[18]->driverFirstname . ' '  . $standings[18]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[18]->driverPicture; ?>"></img>
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <h3 class="rest-driver-names">#20</h3>
+                <h1 class="rest-driver-names"><?php echo $standings[19]->driverFirstname . ' '  . $standings[19]->driverLastname; ?></h1>
+                <div class="rest-driver-imgs">
+                    <img class="img-fit" src="./images/driverimages/<?php echo $standings[19]->driverPicture; ?>"></img>
+                </div>
+            </div>
+        </div>
 
         <div id="modals">
             <!-- Login Modal -->
