@@ -44,25 +44,36 @@ class GambleManager
 
         $stmt = $conn->prepare("
             INSERT INTO sortingtable(sortPosition, driverId) VALUES(?, ?);
-            SELECT sortPosition, driverLastname FROM sortingtable JOIN driver ON driver.driverId = sortingtable.driverId ORDER BY driverLastname ASC;
         ");
         $stmt->bindValue(1, $pPosition);
         $stmt->bindValue(2, $pDriver);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_OBJ);
+        $stmt2 = $conn->prepare("
+        SELECT 
+            sortingtable.sortPosition AS gok, 
+            (SELECT result.resultPosition FROM result WHERE result.driverId = driver.driverId) as resultaat
+        FROM 
+            sortingtable
+        JOIN 
+            driver ON sortingtable.driverId = driver.driverId
+        ");
+        $stmt2->execute();
+
+        return $stmt2->fetchAll(PDO::FETCH_OBJ);
     }
 
     public static function CalculateGamble($pPosition, $pRace, $pDriver, $pUser) {
         global $conn;
         $pointsPerDriver = 0;
 
-        foreach(self::SortGamble($pPosition, $pDriver) as $driverResult) {
-            var_dump($driverResult);
-            if($driverResult->sortPosition == $pPosition) {
+        $lijst = self::SortGamble($pPosition, $pDriver);
+
+        foreach($lijst as $item) {
+            if($item->gok == $item->resultaat) {
                 $pointsPerDriver = 10;
             } else {
-                $differencePerDriver = abs($driverResult->resultPosition - $pPosition);
+                $differencePerDriver = abs($item->resultaat - $pPosition);
                 $pointsPerDriver = 8 - $differencePerDriver;
             }
 

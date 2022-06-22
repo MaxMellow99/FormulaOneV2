@@ -1,6 +1,7 @@
 <?php
     require_once "database.php";
     require_once "managers/GambleManager.php";
+    require_once "managers/DriverManager.php";
 
     for ($i = 1; $i <= 20; $i++) {
         if(isset($_POST["driver$i"])) {
@@ -32,8 +33,8 @@
                                 echo "<td>$i: "; 
                                     echo "<select name='driver$i'>";
                                         echo "<option hidden none>Chose driver</option>";
-                                        foreach(GambleManager::GetGambleResult() as $driver) {
-                                            echo "<option value='$driver->driverLastname'>$driver->driverLastname</option>";
+                                        foreach(DriverManager::GetDriver() as $driver) {
+                                            echo "<option value='$driver->driverId'>$driver->driverLastname</option>";
                                         }
                                     echo "</select>";
                                 echo "</td>";
