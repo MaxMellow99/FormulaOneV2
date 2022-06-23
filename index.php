@@ -19,7 +19,7 @@ $_SESSION['url'] = substr_replace($url, "", -1) . "\n";
 
 //Haalt de huidige tussenstand op.
 $standingmanager = new standingmanager();
-$standings = $standingmanager->getAllStandings();
+$standings = $standingmanager->getStanding();
 
 ?>
 <html>
