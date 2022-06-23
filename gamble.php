@@ -36,3 +36,25 @@
         </table>
     </body>
 </html>
+<?php
+if (isset($_SESSION["user"])) {
+?>
+    <script>
+        $(document).ready(function() {
+            //Login knop 
+            $('#login_logout').attr('data-target', '').attr('href', './logout.php');
+            $('#login_logout').attr('data-toggle', '').attr('href', './logout.php');
+            $("#login_logout").html("Log uit");
+
+            $('#register_button').hide();
+
+            var welcometext;
+            welcometext = "";
+            welcometext += "<span class='text-light' id='welcome_text'>Welkom, <?php echo $_SESSION['user'];  ?>  </span>";
+
+            $("#place-welkom-text").append(welcometext);
+        });
+    </script>
+<?php
+}
+?>
