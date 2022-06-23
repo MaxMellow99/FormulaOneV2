@@ -5,7 +5,11 @@
     require_once "managers/GambleManager.php";
     require_once "managers/DriverManager.php";
 
+
+    var_dump($_POST);
+
     if($_POST) {
+        //Gooit sortingtable leeg
         GambleManager::ClearSorting();
     }
     for ($i = 1; $i <= 20; $i++) {
