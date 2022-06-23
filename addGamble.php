@@ -6,8 +6,6 @@
     require_once "managers/DriverManager.php";
 
 
-    var_dump($_POST);
-
     if($_POST) {
         //Gooit sortingtable leeg
         GambleManager::ClearSorting();
