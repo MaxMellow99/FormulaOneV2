@@ -70,6 +70,8 @@
                     </ul>
                 </div>
             </nav>
+        <h1 class="text-center text-light  p-3">Admin Panel</h1>
+    </body>
 </html>
 <?php
 if (isset($_SESSION["user"])) {

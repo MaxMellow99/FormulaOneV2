@@ -1,10 +1,11 @@
 <?php
-    session_start();
+    require_once "usercheck.php";
 
     var_dump($_SESSION['id']);
     require_once "managers/GambleManager.php";
     require_once "managers/DriverManager.php";
     require_once "managers/personmanager.php";
+    
 
     if (isset($_SESSION['id'])) {
         $personmanager = new personmanager();
@@ -73,7 +74,7 @@
                     <a href="./index.php" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Voorspellen</a>
+                    <a href="./addGamble.php" class="nav-link">Voorspellen</a>
                 </li>
                 <li class="nav-item">
                     <a href="./gebruikers.php" class="nav-link">Gebruiker</a>

@@ -163,9 +163,6 @@ if (isset($_POST['usernamesubmit'])) {
             <div class="acc-page-tabs" id="statistieken-page">
                 <h1>check2</h1>
             </div>
-            <div class="acc-page-tabs" id="beveiliging-page">
-                <h1>check3</h1>
-            </div>
         </div>
 
 
