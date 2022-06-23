@@ -39,14 +39,26 @@
         </div>
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
             <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item">
+                    <a href="./driver.php" class="nav-link">Coureurs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user.php" class="nav-link">Gebruikers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./result.php" class="nav-link">Race resultaten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./standing.php" class="nav-link">Tussenstand</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./allGamble.php" class="nav-link">Alle Gambles</a>
+                </li>
                 <li class="admin-backend" class="nav-item" <?php if($person->userInfoAdmin == 1) { echo "style='display: block;' ";} ?> >
                     <a href="./admin.php" class="nav-link">admin</a>
                 </li>
                 <li class="nav-item">
                     <a href="./index.php" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Voorspellen</a>
                 </li>
                 <li class="nav-item">
                     <a href="./gebruikers.php" class="nav-link">Gebruiker</a>
