@@ -1,5 +1,7 @@
 <?php
-    require_once "database.php";
+    session_start();
+
+    var_dump($_SESSION['id']);
     require_once "managers/GambleManager.php";
     require_once "managers/DriverManager.php";
 
@@ -13,7 +15,7 @@
                      $i,
                     "5",
                     $_POST["driver$i"],
-                    "11"
+                    $_SESSION['id']
             );
         }
     }
