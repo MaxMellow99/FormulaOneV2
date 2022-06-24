@@ -6,12 +6,20 @@ require_once "managers/GambleManager.php";
 require_once "managers/RaceManger.php";
 require_once "managers/personmanager.php";
 
-$gambles = GambleManager::GetFinalGamble();
+
+
 $races = RaceManger::GetRace();
 
 
-
-
+if(isset($_GET['showall'])){
+    $gambles = GambleManager::GetFinalGambleAll($_SESSION['user']);
+    header("location: gamble.php");
+}
+else if (isset($_POST["racetype"])) {
+    $gambles = GambleManager::GetFinalGambleSpecific($_SESSION['user'], $_POST['racetype']);
+} else {
+    $gambles = GambleManager::GetFinalGambleAll($_SESSION['user']);
+}
 
 
 
@@ -25,17 +33,23 @@ $races = RaceManger::GetRace();
 </head>
 
 <body>
-    <select class="m-5" name="racetype">
-        <?php
-        echo "<option hidden none>Chose race</option>";
-        foreach ($races as $race) {
-            echo "<option value='$race->raceId'>$race->raceTrack</option>";
-        }
-        ?>
-    </select>
+    
+    <form method="post">
+    <label>Filter op race</label>
+        <select class="m-2" name="racetype">
+            <?php
+            echo "<option hidden none>Chose race</option>";
+            foreach ($races as $race) {
+                echo "<option value='$race->raceTrack'>$race->raceTrack</option>";
+            }
+            ?>
+        </select>
+        <input type="submit">
+    </form>
 
+        
 
-
+    <a class="btn btn-primary m-3" href="gamble.php?showall">show all</a>
 
     <table class="table table-striped">
         <thead class="table-dark">

@@ -4,9 +4,11 @@ session_start();
 
 require_once "managers/GambleManager.php";
 require_once "managers/DriverManager.php";
+require_once "managers/RaceManger.php";
 
 
-var_dump($_SESSION['id']);
+$races = RaceManger::GetRace();
+
 
 if ($_POST) {
     //Gooit sortingtable leeg
@@ -18,7 +20,7 @@ if ($_POST) {
 
             GambleManager::CalculateGamble(
                 $i,
-                "4",
+                $_POST["racetype"],
                 $_POST["position$i"],
                 $_SESSION['id']
             );
@@ -37,6 +39,17 @@ if ($_POST) {
 
 <body>
     <form method="POST">
+        <label>Filter op race</label>
+        <select class="m-2" name="racetype">
+            <?php
+            echo "<option hidden none>Chose race</option>";
+            foreach ($races as $race) {
+                echo "<option value='$race->raceId'>$race->raceTrack</option>";
+            }
+            ?>
+        </select>
+        <input type="submit">
+
         <table class="table table-striped">
             <thead class="table-dark">
                 <th>Gamble <input type="submit"></th>

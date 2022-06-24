@@ -2,6 +2,21 @@
 
 require_once "./usercheck.php";
 require_once "managers/personmanager.php";
+require_once "managers/GambleManager.php";
+require_once "managers/RaceManger.php";
+
+
+$races = RaceManger::GetRace();
+
+
+if (isset($_GET['showall'])) {
+    $gambles = GambleManager::GetFinalGambleAll($_SESSION['user']);
+    header("location: gebruikers.php");
+} else if (isset($_POST["racetype"])) {
+    $gambles = GambleManager::GetFinalGambleSpecific($_SESSION['user'], $_POST['racetype']);
+} else {
+    $gambles = GambleManager::GetFinalGambleAll($_SESSION['user']);
+}
 
 
 //is er ingelogd
@@ -64,7 +79,7 @@ if (isset($_POST['usernamesubmit'])) {
         <img id="header-logo" src="images/F1.svg.png" class="navbar-brand"></img>
 
         <ul id="nav-top" class="navbar-nav ml-auto flex-nowrap">
-        <li id="place-welkom-text" class="nav-item text-light">
+            <li id="place-welkom-text" class="nav-item text-light">
                 <a id="register_button" type="button" data-toggle="modal" data-target="#myModal1" href="#" class="nav-link btn-danger loginlogout">register</a>
             </li>
             <li class="nav-item">
@@ -86,7 +101,9 @@ if (isset($_POST['usernamesubmit'])) {
         </div>
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
             <ul class="navbar-nav ml-auto flex-nowrap">
-                <li class="admin-backend" class="nav-item" <?php if($person->userInfoAdmin == 1) { echo "style='display: block;' ";} ?> >
+                <li class="admin-backend" class="nav-item" <?php if ($person->userInfoAdmin == 1) {
+                                                                echo "style='display: block;' ";
+                                                            } ?>>
                     <a href="./admin.php" class="nav-link">admin</a>
                 </li>
                 <li class="nav-item">
@@ -158,13 +175,48 @@ if (isset($_POST['usernamesubmit'])) {
                 </form>
             </div>
             <div class="acc-page-tabs" id="voorspellingen-page">
-                <h1>check1</h1>
+                <h1 class="m-3 text-left text-light">Voorspellingen</h1>
+
+                <form style="width: 60%; float:left;" method="post">
+                    <label>Filter op race</label>
+                    <select class="m-2" name="racetype">
+                        <?php
+                        echo "<option hidden none>Chose race</option>";
+                        foreach ($races as $race) {
+                            echo "<option value='$race->raceTrack'>$race->raceTrack</option>";
+                        }
+                        ?>
+                    </select>
+                    <input type="submit">
+                    <a class="btn btn-primary m-3" href="gebruikers.php?showall">show all</a>
+                </form>
+
+
+
+                
+                <table style="width: 60%;" class="table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <td>Race</td>
+                            <td>Username</td>
+                            <td>Points</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($gambles as $gamble) {
+                            echo "<tr>";
+                            echo "<td>$gamble->raceTrack</td>";
+                            echo "<td>$gamble->userInfoUsername</td>";
+                            echo "<td>$gamble->Points</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
             <div class="acc-page-tabs" id="statistieken-page">
                 <h1>check2</h1>
-            </div>
-            <div class="acc-page-tabs" id="beveiliging-page">
-                <h1>check3</h1>
             </div>
         </div>
 

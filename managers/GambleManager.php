@@ -130,12 +130,23 @@ class GambleManager
         $stmt->execute();
     }
 
-    public static function GetFinalGamble(){
+    public static function GetFinalGambleAll($username){
         global $conn;
-        $stmt = $conn->prepare('SELECT * FROM finalgamble');
+        $stmt = $conn->prepare('SELECT * FROM finalgamble WHERE userInfoUsername = ?');
+        $stmt->bindValue(1, $username);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
+
+    public static function GetFinalGambleSpecific($username, $raceTrack){
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM finalgamble WHERE userInfoUsername = ? AND raceTrack = ?');
+        $stmt->bindValue(1, $username);
+        $stmt->bindValue(2, $raceTrack);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 }
