@@ -85,14 +85,14 @@ if ($_POST) {
                     <a href="./gebruikers.php" class="nav-link">Gebruiker</a>
                 </li>
                 <li class="nav-item">
-                    <img id="acc-profile-img" src="<?php if (isset($_SESSION["id"])) echo "./images/profileimages/$person->userProfileImg";
-                                                    if (!isset($_SESSION["id"])) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
+                    <img id="acc-profile-img" src="<?php if (isset($person->userProfileImg)) echo "./images/profileimages/$person->userProfileImg";
+                                                    if (!isset($person->userProfileImg)) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
                 </li>
             </ul>
         </div>
     </nav>
     <form method="POST">
-        <label>Filter op race</label>
+        <label class="m-3 text-light">Filter op race</label>
         <select class="m-2" name="racetype">
             <?php
             echo "<option hidden none>Chose race</option>";
@@ -101,7 +101,7 @@ if ($_POST) {
             }
             ?>
         </select>
-        <table class="table table-striped">
+        <table class="table table-striped table-light">
             <thead class="table-dark">
                 <th>Gamble <input type="submit"></th>
             </thead>

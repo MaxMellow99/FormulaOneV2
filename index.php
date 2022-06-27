@@ -71,8 +71,8 @@ $standings = $standingmanager->getStanding();
                     <a href="./gebruikers.php" class="nav-link">Gebruiker</a>
                 </li>
                 <li class="nav-item">
-                    <img id="acc-profile-img" src="<?php if (isset($_SESSION["id"])) echo "./images/profileimages/$person->userProfileImg";
-                                                    if (!isset($_SESSION["id"])) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
+                    <img id="acc-profile-img" src="<?php if (isset($person->userProfileImg)) echo "./images/profileimages/$person->userProfileImg";
+                                                    if (!isset($person->userProfileImg)) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
                 </li>
             </ul>
         </div>
