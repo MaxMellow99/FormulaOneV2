@@ -174,18 +174,20 @@ if (isset($_POST['usernamesubmit'])) {
             <div class="acc-page-tabs" id="voorspellingen-page">
                 <h1 class="m-3 text-left text-light">Voorspellingen</h1>
 
-                <form style="width: 60%; float:left;" method="post">
-                    <label>Filter op race</label>
-                    <select class="m-2" name="racetype">
-                        <?php
-                        echo "<option hidden none>Chose race</option>";
-                        foreach ($races as $race) {
-                            echo "<option value='$race->raceTrack'>$race->raceTrack</option>";
-                        }
-                        ?>
-                    </select>
-                    <input type="submit">
-                    <a class="btn btn-primary m-3" href="gebruikers.php?showall">show all</a>
+                <form style="width: 60%; float:left;" method="post" class="d-flex justify-content-center">
+                    <div>
+                        <label class="text-white h5">Filter op race</label>
+                        <select class="m-2" name="racetype">
+                            <?php
+                            echo "<option hidden none>Chose race</option>";
+                            foreach ($races as $race) {
+                                echo "<option value='$race->raceTrack'>$race->raceTrack</option>";
+                            }
+                            ?>
+                        </select>
+                        <input type="submit" class="btn btn-warning">
+                        <a class="btn btn-primary m-3" href="gebruikers.php?showall">show all</a>
+                    </div>
                 </form>
 
 
