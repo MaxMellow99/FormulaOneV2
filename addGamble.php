@@ -101,8 +101,6 @@ if ($_POST) {
             }
             ?>
         </select>
-        <input type="submit">
-
         <table class="table table-striped">
             <thead class="table-dark">
                 <th>Gamble <input type="submit"></th>
