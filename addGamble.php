@@ -91,60 +91,6 @@ if ($_POST) {
             </ul>
         </div>
     </nav>
-        <form method="POST">
-            <table class="table table-striped">
-                <thead class="table-dark">
-                    <th>Gamble <input type="submit"></th>
-                </thead>
-                <tbody>
-                    <?php
-                        for ($i = 1; $i <= 20; $i++) {
-                            echo "<tr>";
-                                echo "<td>$i: "; 
-                                    echo "<select name='driver$i'>";
-                                        echo "<option hidden none>Chose driver</option>";
-                                        foreach(DriverManager::GetDriver() as $driver) {
-                                            echo "<option value='$driver->driverId'>$driver->driverLastname</option>";
-                                        }
-                                    echo "</select>";
-                                echo "</td>";
-                            echo "</tr>";
-                        }
-                    ?>
-                </tbody>
-            </table>
-        </form>
-    </body>
-</html>
-<?php
-if (isset($_SESSION["user"])) {
-?>
-    <script>
-        $(document).ready(function() {
-            //Login knop 
-            $('#login_logout').attr('data-target', '').attr('href', './logout.php');
-            $('#login_logout').attr('data-toggle', '').attr('href', './logout.php');
-            $("#login_logout").html("Log uit");
-
-            $('#register_button').hide();
-
-            var welcometext;
-            welcometext = "";
-            welcometext += "<span class='text-light' id='welcome_text'>Welkom, <?php echo $_SESSION['user'];  ?>  </span>";
-
-            $("#place-welkom-text").append(welcometext);
-        });
-    </script>
-<?php
-}
-?>
-
-<head>
-    <title>Gamble - Formula One</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
-
-<body>
     <form method="POST">
         <label>Filter op race</label>
         <select class="m-2" name="racetype">
@@ -179,6 +125,27 @@ if (isset($_SESSION["user"])) {
             </tbody>
         </table>
     </form>
-</body>
-
+    </body>
 </html>
+<?php
+if (isset($_SESSION["user"])) {
+?>
+    <script>
+        $(document).ready(function() {
+            //Login knop 
+            $('#login_logout').attr('data-target', '').attr('href', './logout.php');
+            $('#login_logout').attr('data-toggle', '').attr('href', './logout.php');
+            $("#login_logout").html("Log uit");
+
+            $('#register_button').hide();
+
+            var welcometext;
+            welcometext = "";
+            welcometext += "<span class='text-light' id='welcome_text'>Welkom, <?php echo $_SESSION['user'];  ?>  </span>";
+
+            $("#place-welkom-text").append(welcometext);
+        });
+    </script>
+<?php
+}
+?>

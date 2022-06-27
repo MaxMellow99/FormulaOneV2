@@ -81,29 +81,32 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Position: <input type="number" name="position"><br>
-            Driver: <?php
-                echo '<select name="driver">';
-                    foreach (DriverManager::GetDriver() as $driver) {
-                        echo '<<option selected disabled hidden>Kies</option>';
-                        echo "<option class='form-select w-75' value='$driver->driverId'>$driver->driverFirstname $driver->driverLastname</option>";
-                    }
-                echo '</select>';
-                echo '<br>';
-            ?>
-            Race: <?php
-                echo '<select name="race">';
-                    foreach (RaceManger::GetRace() as $race) {
-                        echo '<<option selected disabled hidden>Kies</option>';
-                        echo "<option class='form-select w-75' value='$race->raceId'>$race->raceTrack</option>";
-                    }
-                echo '</select>';
-                echo '<br>';
-            ?>
-            Points: <input type="number" name="points"><br>
-            <input type="submit" value="Add"><br>
-            <a href="race.php">Cancel</a>
+            <H1 class="text-center text-light">Resultaat toevoegen</H1>
+        <form method="Post" class="d-flex justify-content-center">
+            <div>
+                <label class="text-light">Position:</label> <input class="form-control" type="number" name="position"><br>
+                <label class="text-light">Driver:</label> <?php
+                    echo '<select name="driver" class="form-control">';
+                        foreach (DriverManager::GetDriver() as $driver) {
+                            echo '<option selected disabled hidden>Kies</option>';
+                            echo "<option class='form-select w-75' value='$driver->driverId'>$driver->driverFirstname $driver->driverLastname</option>";
+                        }
+                    echo '</select>';
+                    echo '<br>';
+                ?>
+                <label class="text-light">Race:</label> <?php
+                    echo '<select name="race" class="form-control">';
+                        foreach (RaceManger::GetRace() as $race) {
+                            echo '<option selected disabled hidden>Kies</option>';
+                            echo "<option class='form-select w-75' value='$race->raceId'>$race->raceTrack</option>";
+                        }
+                    echo '</select>';
+                    echo '<br>';
+                ?>
+                <label class="text-light">Points:</label> <input class="form-control" type="number" name="points"><br>
+                <input type="submit" value="Add" class="btn btn-primary"><br><br>
+                <a href="race.php" class="btn btn-warning">Cancel</a>
+            </div>
         </form>
     </body>
 </html>
