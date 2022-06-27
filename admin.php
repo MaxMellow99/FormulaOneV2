@@ -55,7 +55,7 @@
                             <a href="./race.php" class="nav-link">Races</a>
                         </li>
                         <li class="admin-backend" class="nav-item" <?php if($person->userInfoAdmin == 1) { echo "style='display: block;' ";} ?> >
-                            <a href="./admin.php" class="nav-link">admin</a>
+                            <a href="./admin.php" class="nav-link text-white">admin</a>
                         </li>
                         <li class="nav-item">
                             <a href="./index.php" class="nav-link">Home</a>

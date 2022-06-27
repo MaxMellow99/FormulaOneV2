@@ -46,7 +46,7 @@
                             <a href="./driver.php" class="nav-link">Coureurs</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./user.php" class="nav-link">Gebruikers</a>
+                            <a href="./user.php" class="nav-link text-white">Gebruikers</a>
                         </li>
                         <li class="nav-item">
                             <a href="./result.php" class="nav-link">Race resultaten</a>
@@ -101,7 +101,7 @@
                         echo '<td>'.$user->userInfoAdmin.'</td>';
                         echo '<td>'.$user->userIsActive.'</td>';
                         echo '<td>'.$user->userProfileImg.'</td>';
-                        echo '<td><a class="btn btn-primary" href="updateUser.php?userId='.$user->userInfoId.'">Update</a></td>';
+                        echo '<td><a class="btn btn-success" href="updateUser.php?userId='.$user->userInfoId.'">Update</a></td>';
                         echo '<td><a class="btn btn-danger" href="admin.php?userId='.$user->userInfoId.'">Delete</a></td>';
                     echo '</tr>';
                 }

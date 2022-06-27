@@ -65,7 +65,7 @@
                             <a href="./standing.php" class="nav-link">Tussenstand</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./race.php" class="nav-link">Races</a>
+                            <a href="./race.php" class="nav-link text-white">Races</a>
                         </li>
                         <li class="admin-backend" class="nav-item" <?php if($person->userInfoAdmin == 1) { echo "style='display: block;' ";} ?> >
                             <a href="./admin.php" class="nav-link">admin</a>
@@ -83,14 +83,17 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Season: <input type="number" name="season" value="<?php echo $race->raceSeason ?>"><br>
-            Round: <input type="number" name="round" value="<?php echo $race->raceRound ?>"><br>
-            Track: <input type="text" name="track" value="<?php echo $race->raceTrack ?>"><br>
-            Date: <input type="date" name="date" value="<?php echo $race->raceDate ?>"><br>
-            Time: <input type="time" name="time" value="<?php echo $race->raceTime ?>"><br>
-            <input type="submit" value="Update"><br>
-            <a href="race.php">Cancel</a>
+        <H1 class="text-center text-light">Race aanpassen</H1>
+        <form method="Post"" class="d-flex justify-content-center">
+            <div>
+                Season: <input class="form-control" type="number" name="season" value="<?php echo $race->raceSeason ?>"><br>
+                Round: <input class="form-control" type="number" name="round" value="<?php echo $race->raceRound ?>"><br>
+                Track: <input class="form-control" type="text" name="track" value="<?php echo $race->raceTrack ?>"><br>
+                Date: <input class="form-control" type="date" name="date" value="<?php echo $race->raceDate ?>"><br>
+                Time: <input class="form-control" type="time" name="time" value="<?php echo $race->raceTime ?>"><br>
+                <input class="btn btn-primary" type="submit" value="Update"><br><br>
+                <a class="btn btn-warning" href="race.php">Cancel</a>
+            </div>
         </form>
     </body>
 </html>

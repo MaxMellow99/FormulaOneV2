@@ -59,7 +59,7 @@
                             <a href="./driver.php" class="nav-link">Coureurs</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./user.php" class="nav-link">Gebruikers</a>
+                            <a href="./user.php" class="nav-link text-white">Gebruikers</a>
                         </li>
                         <li class="nav-item">
                             <a href="./result.php" class="nav-link">Race resultaten</a>
@@ -86,7 +86,7 @@
                     </ul>
                 </div>
             </nav>
-            <H1 class="text-center text-light">Updating <?php echo $user->userInfoUsername ?></H1>
+            <H1 class="text-center text-light"><?php echo $user->userInfoUsername ?><br>Updaten</H1>
         <form method="Post" class="d-flex justify-content-center">
             <div>
                 <label class="text-light">Username:</label> <input class="form-control" type="text" name="username" value="<?php echo $user->userInfoUsername ?>"><br>

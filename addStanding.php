@@ -59,7 +59,7 @@
                             <a href="./result.php" class="nav-link">Race resultaten</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./standing.php" class="nav-link">Tussenstand</a>
+                            <a href="./standing.php" class="nav-link text-white">Tussenstand</a>
                         </li>
                         <li class="nav-item">
                             <a href="./race.php" class="nav-link">Races</a>
@@ -80,21 +80,24 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Driver: <?php
-                echo '<select name="driver">';
-                    foreach (DriverManager::GetDriver() as $driver) {
-                        echo '<<option selected disabled hidden>Kies</option>';
-                        echo "<option class='form-select w-75' value='$driver->driverId'>$driver->driverFirstname $driver->driverLastname</option>";
-                    }
-                echo '</select>';
-                echo '<br>';
-            ?>
-            Position: <input type="number" name="position"><br>
-            Points: <input type="number" name="points"><br>
-            Wins: <input type="number" name="wins"><br>
-            <input type="submit" value="Add"><br>
-            <a href="standing.php">Cancel</a>
+            <H1 class="text-center text-light">Stand Toevoegen</H1>
+        <form method="Post" class="d-flex justify-content-center">
+            <div>
+                <label class="text-light">Driver:</label> <?php
+                    echo '<select class="form-control" name="driver">';
+                        foreach (DriverManager::GetDriver() as $driver) {
+                            echo '<option selected disabled hidden>Kies</option>';
+                            echo "<option class='form-select w-75' value='$driver->driverId'>$driver->driverFirstname $driver->driverLastname</option>";
+                        }
+                    echo '</select>';
+                    echo '<br>';
+                ?>
+                <label class="text-light">Position:</label> <input class="form-control" type="number" name="position"><br>
+                <label class="text-light">Points:</label> <input class="form-control" type="number" name="points"><br>
+                <label class="text-light">Wins:</label> <input class="form-control" type="number" name="wins"><br>
+                <input type="submit" class="btn-primary btn" value="Add"><br><br>
+                <a class="btn btn-warning" href="standing.php">Cancel</a>
+            </div>
         </form>
     </body>
 </html>

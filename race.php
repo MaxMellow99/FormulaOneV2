@@ -55,7 +55,7 @@
                             <a href="./standing.php" class="nav-link">Tussenstand</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./race.php" class="nav-link">Races</a>
+                            <a href="./race.php" class="nav-link text-white">Races</a>
                         </li>
                         <li class="admin-backend" class="nav-item" <?php if($person->userInfoAdmin == 1) { echo "style='display: block;' ";} ?> >
                             <a href="./admin.php" class="nav-link">admin</a>
@@ -74,7 +74,7 @@
                 </div>
             </nav>
 
-        <table>
+        <table class="table table-striped table-light">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -84,7 +84,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th></th>
-                    <th><a href="addRace.php">Add</a></th>
+                    <th><a class="btn btn-primary" href="addRace.php">Add</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -97,8 +97,8 @@
                         echo '<td>'.$race->raceTrack.'</td>';
                         echo '<td>'.$race->raceDate.'</td>';
                         echo '<td>'.$race->raceTime.'</td>';
-                        echo '<td><a href="updateRace.php?raceId='.$race->raceId.'">Update</a></td>';
-                        echo '<td><a href="race.php?raceId='.$race->raceId.'">Delete</a></td>';
+                        echo '<td><a class="btn btn-success" href="updateRace.php?raceId='.$race->raceId.'">Update</a></td>';
+                        echo '<td><a class="btn btn-danger" href="race.php?raceId='.$race->raceId.'">Delete</a></td>';
                         echo '</tr>';
                     }
                 ?>

@@ -57,7 +57,7 @@
                             <a href="./user.php" class="nav-link">Gebruikers</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./result.php" class="nav-link">Race resultaten</a>
+                            <a href="./result.php" class="nav-link text-white">Race resultaten</a>
                         </li>
                         <li class="nav-item">
                             <a href="./standing.php" class="nav-link">Tussenstand</a>

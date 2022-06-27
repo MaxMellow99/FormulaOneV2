@@ -54,7 +54,7 @@
                 <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
                     <ul class="navbar-nav ml-auto flex-nowrap">
                     <li class="nav-item">
-                            <a href="./driver.php" class="nav-link">Coureurs</a>
+                            <a href="./driver.php" class="nav-link text-white">Coureurs</a>
                         </li>
                         <li class="nav-item">
                             <a href="./user.php" class="nav-link">Gebruikers</a>

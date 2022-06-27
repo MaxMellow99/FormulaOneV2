@@ -52,7 +52,7 @@
                             <a href="./result.php" class="nav-link">Race resultaten</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./standing.php" class="nav-link">Tussenstand</a>
+                            <a href="./standing.php" class="nav-link text-white">Tussenstand</a>
                         </li>
                         <li class="nav-item">
                             <a href="./race.php" class="nav-link">Races</a>
@@ -74,7 +74,7 @@
                 </div>
             </nav>
 
-        <table>
+        <table class="table table-striped table-light">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -84,7 +84,7 @@
                     <th>Points</th>
                     <th>Wins</th>
                     <th></th>
-                    <th><a href="addStanding.php">Add</a></th>
+                    <th><a class="btn btn-primary" href="addStanding.php">Add</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -97,8 +97,8 @@
                             echo '<td>'.$standing->standingPosition.'</td>';
                             echo '<td>'.$standing->standingPoints.'</td>';
                             echo '<td>'.$standing->standingWins.'</td>';
-                            echo '<td><a href="updateStanding.php?standingId='.$standing->standingId.'">Update</a></td>';
-                            echo '<td><a href="standing.php?standingId='.$standing->standingId.'">Delete</a></td>';
+                            echo '<td><a class="btn btn-success" href="updateStanding.php?standingId='.$standing->standingId.'">Update</a></td>';
+                            echo '<td><a class="btn btn-danger" href="standing.php?standingId='.$standing->standingId.'">Delete</a></td>';
                         echo '</tr>';
                     }
                 ?>

@@ -62,7 +62,7 @@
                             <a href="./standing.php" class="nav-link">Tussenstand</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./race.php" class="nav-link">Races</a>
+                            <a href="./race.php" class="nav-link text-white">Races</a>
                         </li>
                         <li class="admin-backend" class="nav-item" <?php if($person->userInfoAdmin == 1) { echo "style='display: block;' ";} ?> >
                             <a href="./admin.php" class="nav-link">admin</a>
@@ -80,14 +80,17 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Season: <input type="text" name="season"><br>
-            Round: <input type="number" name="round"><br>
-            Track: <input type="text" name="track"><br>
-            Date: <input type="date" name="date"><br>
-            Time: <input type="time" name="time"><br>
-            <input type="submit" value="Add"><br>
-            <a href="race.php.php">Cancel</a>
+            <H1 class="text-center text-light">Race toevoegen</H1>
+        <form method="Post" class="d-flex justify-content-center">
+            <div>
+                <label class="text-light">Season:</label> <input class="form-control" type="text" name="season"><br>
+                <label class="text-light">Round:</label> <input class="form-control" type="number" name="round"><br>
+                <label class="text-light">Track:</label> <input class="form-control" type="text" name="track"><br>
+                <label class="text-light">Date:</label> <input class="form-control" type="date" name="date"><br>
+                <label class="text-light">Time:</label> <input class="form-control" type="time" name="time"><br>
+                <input class="btn btn-primary" type="submit" value="Add"><br><br>
+                <a class="btn btn-warning" href="race.php.php">Cancel</a>
+            </div>
         </form>
     </body>
 </html>

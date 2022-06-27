@@ -51,7 +51,7 @@
                 <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
                     <ul class="navbar-nav ml-auto flex-nowrap">
                     <li class="nav-item">
-                            <a href="./driver.php" class="nav-link">Coureurs</a>
+                            <a href="./driver.php" class="nav-link text-white">Coureurs</a>
                         </li>
                         <li class="nav-item">
                             <a href="./user.php" class="nav-link">Gebruikers</a>
@@ -81,7 +81,7 @@
                     </ul>
                 </div>
             </nav>
-            <H1 class="text-center text-light">Adding a driver</H1>
+            <H1 class="text-center text-light">Coureur Toevoegen</H1>
         <form method="Post" class="d-flex justify-content-center">
             <div>
                 <label class="text-light">Firstname:</label> <input class="form-control" type="text" name="firstname"><br>
