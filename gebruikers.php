@@ -113,7 +113,7 @@ if (isset($_POST['usernamesubmit'])) {
                     <a href="addGamble.php" class="nav-link">Voorspellen</a>
                 </li>
                 <li class="nav-item">
-                    <a href="./gebruikers.php" class="nav-link">Gebruiker</a>
+                    <a href="./gebruikers.php" class="nav-link text-white">Gebruiker</a>
                 </li>
                 <li class="nav-item">
                     <img id="acc-profile-img" alt="No Image" src="<?php if (isset($person->userProfileImg)) echo "./images/profileimages/$person->userProfileImg";
@@ -132,13 +132,10 @@ if (isset($_POST['usernamesubmit'])) {
 
             <ul id="vertical-nav" class="nav flex-column">
                 <li class="vertical-nav-border" class="nav-item">
-                    <a data="profile-page" class="nav-link active" onclick="showPage(this)">Persoonlijke Informatie</a>
+                    <a data="profile-page" id="knopjong" class="nav-link active" onclick="showPage(this)">Persoonlijke Informatie</a>
                 </li>
                 <li class="vertical-nav-border" class="nav-item">
                     <a data="voorspellingen-page" class="nav-link" onclick="showPage(this)">Voorspellingen</a>
-                </li>
-                <li class="vertical-nav-border" class="nav-item">
-                    <a data="statistieken-page" class="nav-link" onclick="showPage(this);">Statistieken</a>
                 </li>
             </ul>
         </div>
@@ -194,7 +191,7 @@ if (isset($_POST['usernamesubmit'])) {
 
 
                 
-                <table style="width: 60%;" class="table-striped">
+                <table style="width: 60%;" class="table-striped table table-light">
                     <thead class="table-dark">
                         <tr>
                             <td>Race</td>
@@ -214,9 +211,6 @@ if (isset($_POST['usernamesubmit'])) {
                         ?>
                     </tbody>
                 </table>
-            </div>
-            <div class="acc-page-tabs" id="statistieken-page">
-                <h1>check2</h1>
             </div>
         </div>
 
@@ -405,12 +399,11 @@ if (isset($_POST['usernamesubmit'])) {
 
 <script>
     $(document).ready(function() {
-
+        $('#profile-page').show();
         <?php
         //Ben je ingelogd?
         if (isset($_SESSION["user"])) {
         ?>
-
             //Login knop 
             $('#login_logout').attr('data-target', '').attr('href', './logout.php');
             $('#login_logout').attr('data-toggle', '').attr('href', './logout.php');
@@ -436,8 +429,6 @@ if (isset($_POST['usernamesubmit'])) {
                 //alle tabs sluiten zodat er geen dubbele open staan.
                 $('#profile-page').hide();
                 $('#voorspellingen-page').hide();
-                $('#statistieken-page').hide();
-                $('#beveiliging-page').hide();
 
                 //Id van de page uit de button data attribute halen.
                 $id = $(page).attr('data');

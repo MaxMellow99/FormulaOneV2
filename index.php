@@ -62,7 +62,7 @@ $standings = $standingmanager->getStanding();
                     <a href="./admin.php" class="nav-link">admin</a>
                 </li>
                 <li class="nav-item">
-                    <a href="./index.php" class="nav-link">Home</a>
+                    <a href="./index.php" class="nav-link text-white">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="./addGamble.php" class="nav-link">Voorspellen</a>
