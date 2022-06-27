@@ -20,7 +20,11 @@ if (isset($_GET['showall'])) {
     $gambles = GambleManager::GetFinalGambleAllNames();
 }
 
+if(isset($_GET['deletegambleId'])) {
+    GambleManager::deleteSpecificGamble($_GET['deletegambleId']);
 
+    header("location: gamble.php");
+}
 
 ?>
 <!doctype html>
@@ -118,6 +122,7 @@ if (isset($_GET['showall'])) {
                 <td>Race</td>
                 <td>Username</td>
                 <td>Points</td>
+                <td>Delete</td>
             </tr>
         </thead>
         <tbody>
@@ -127,6 +132,7 @@ if (isset($_GET['showall'])) {
                 echo "<td>$gamble->raceTrack</td>";
                 echo "<td>$gamble->userInfoUsername</td>";
                 echo "<td>$gamble->Points</td>";
+                echo "<td><a href='gamble.php?deletegambleId=$gamble->gambleId' style='color: white;' class='btn btn-danger'>X</a></td>";
                 echo "</tr>";
             }
             ?>

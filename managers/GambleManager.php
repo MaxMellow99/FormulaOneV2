@@ -3,6 +3,15 @@ require_once "database.php";
 
 class GambleManager
 {
+
+    public static function deleteSpecificGamble($id){
+        global $conn;
+
+        $stmt = $conn->prepare("DELETE FROM finalgamble WHERE gambleId = ?");
+        $stmt->bindValue(1, $id);
+
+        $stmt->execute();
+    }
     public static function GetGamble($username) {
         global $conn;
 
