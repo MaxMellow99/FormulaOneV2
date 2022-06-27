@@ -9,7 +9,6 @@ $activation_code = $emailmanager->generate_activation_code();
 
 $_SESSION['code'] = $activation_code;
 
-var_dump($_SESSION['code']);
 
 
 if (isset($_POST['register'])) {

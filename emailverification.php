@@ -17,11 +17,11 @@ function send_activation_email($email, $firstname, $activation)
     //Create a new PHPMailer instance
     $mail = new PHPMailer();
     $mail->isSMTP();
-    $mail->Host = 'smtp.mailtrap.io';
+    $mail->Host = 'smtp.strato.com';
     $mail->SMTPAuth = true;
-    $mail->Port = 2525;
-    $mail->Username = 'c143369d5b220d';
-    $mail->Password = '1bf44c7dd6f0f0';
+    $mail->Port = 587;
+    $mail->Username = 'student@computercampus.nl';
+    $mail->Password = 'Sp@mmenmagniet!';
 
 
 

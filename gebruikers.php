@@ -116,8 +116,8 @@ if (isset($_POST['usernamesubmit'])) {
                     <a href="./gebruikers.php" class="nav-link">Gebruiker</a>
                 </li>
                 <li class="nav-item">
-                    <img id="acc-profile-img" src="<?php if (isset($_SESSION["id"])) echo "./images/profileimages/$person->userProfileImg";
-                                                    if (!isset($_SESSION["id"])) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
+                    <img id="acc-profile-img" alt="No Image" src="<?php if (isset($person->userProfileImg)) echo "./images/profileimages/$person->userProfileImg";
+                                                    if (!isset($person->userProfileImg)) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
                 </li>
             </ul>
         </div>
@@ -126,8 +126,8 @@ if (isset($_POST['usernamesubmit'])) {
         <div id="acc-sidebar">
             <h2 class="acc-text-sidebar">Mijn Account</h2>
             <h5 class="acc-text-sidebar-smaller">Je bent ingelogd als <?php echo $_SESSION["user"]; ?></h5>
-            <img id="acc-profile-img-bigger" src="<?php if (isset($_SESSION["id"])) echo "./images/profileimages/$person->userProfileImg";
-                                                    if (!isset($_SESSION["id"])) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
+            <img id="acc-profile-img-bigger"    alt="No Image" src="<?php if (isset($person->userProfileImg)) echo "./images/profileimages/$person->userProfileImg";
+                                                    if (!isset($person->userProfileImg)) echo "./images/profileimages/TEMPFOTO.jpg"; ?>">
             <h5 class="acc-text-sidebar-smaller"><a type="button" data-toggle="modal" data-target="#myModal2" id="acc-change-profilepic">Verander profielfoto</a> </h5>
 
             <ul id="vertical-nav" class="nav flex-column">

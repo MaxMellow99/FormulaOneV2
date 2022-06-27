@@ -1,11 +1,12 @@
 <?php
-    require_once "admincheck.php";
+require_once "admincheck.php";
 
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php
     require "./head.php";
@@ -39,6 +40,9 @@
                 </div>
                 <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
                     <ul class="navbar-nav ml-auto flex-nowrap">
+                    <li class="nav-item">
+                            <a href="./gamble.php" class="nav-link">Gamble</a>
+                        </li>
                     <li class="nav-item">
                             <a href="./driver.php" class="nav-link">Coureurs</a>
                         </li>
