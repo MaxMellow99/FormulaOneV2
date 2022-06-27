@@ -24,4 +24,4 @@ $finalGambleObj->Points = $points;
 
 GambleManager::InsertFinalGamble($finalGambleObj->userInfoUsername, $finalGambleObj->raceTrack, $finalGambleObj->Points);
 
-header("location: gamble.php");
+header("location: gebruikers.php");
