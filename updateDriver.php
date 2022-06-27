@@ -84,15 +84,19 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Firstname: <input type="text" name="firstname" value="<?php echo $driver->driverFirstname ?>"><br>
-            Lastname: <input type="text" name="lastname" value="<?php echo $driver->driverLastname ?>"><br>
-            Number: <input type="number" name="number" value="<?php echo $driver->driverNumber ?>"><br>
-            Code: <input type="text" name="code" value="<?php echo $driver->driverCode ?>"><br>
-            Birthdate: <input type="text" name="birthdate" value="<?php echo $driver->driverBirthdate ?>"><br>
-            Nationality: <input type="text" name="nationality" value="<?php echo $driver->driverNationality ?>"><br>
-            <input type="submit" value="Update"><br>
-            <a href="driver.php">Cancel</a>
+            <H1 class="text-center text-light">Updating <?php echo $driver->driverFirstname . $driver->driverLastname ?></H1>
+
+        <form method="Post" class="d-flex justify-content-center">
+            <div>
+                <label class="text-light">Firstname:</label> <input class="form-control" type="text" name="firstname" value="<?php echo $driver->driverFirstname ?>"><br>
+                <label class="text-light">Lastname:</label> <input class="form-control" type="text" name="lastname" value="<?php echo $driver->driverLastname ?>"><br>
+                <label class="text-light">Number: <input class="form-control" type="number" name="number" value="<?php echo $driver->driverNumber ?>"><br>
+                <label class="text-light">Code:</label> <input class="form-control" type="text" name="code" value="<?php echo $driver->driverCode ?>"><br>
+                <label class="text-light">Birthdate:</label> <input class="form-control" type="text" name="birthdate" value="<?php echo $driver->driverBirthdate ?>"><br>
+                <label class="text-light">Nationality:</label> <input class="form-control" type="text" name="nationality" value="<?php echo $driver->driverNationality ?>"><br>
+                <input class="btn btn-primary" type="submit" value="Update"><br><br>
+                <button class="btn btn-warning"><a href="driver.php">Cancel</a></button>
+            </div>
         </form>
     </body>
 </html>

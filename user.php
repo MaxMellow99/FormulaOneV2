@@ -74,7 +74,7 @@
                 </div>
             </nav>
 
-        <table>
+        <table class="table table-striped table-light">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -83,7 +83,6 @@
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Is Admin</th>
-                    <th>Activation Code</th>
                     <th>Is Active</th>
                     <th>Profile Picture</th>
                     <th></th>
@@ -100,11 +99,10 @@
                         echo '<td>'.$user->userInfoLastname.'</td>';
                         echo '<td>'.$user->userInfoEmail.'</td>';
                         echo '<td>'.$user->userInfoAdmin.'</td>';
-                        echo '<td>'.$user->userActivationCode.'</td>';
                         echo '<td>'.$user->userIsActive.'</td>';
                         echo '<td>'.$user->userProfileImg.'</td>';
-                        echo '<td><a href="updateUser.php?userId='.$user->userInfoId.'">Update</a></td>';
-                        echo '<td><a href="admin.php?userId='.$user->userInfoId.'">Delete</a></td>';
+                        echo '<td><a class="btn btn-primary" href="updateUser.php?userId='.$user->userInfoId.'">Update</a></td>';
+                        echo '<td><a class="btn btn-danger" href="admin.php?userId='.$user->userInfoId.'">Delete</a></td>';
                     echo '</tr>';
                 }
             ?>

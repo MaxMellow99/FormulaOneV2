@@ -74,7 +74,7 @@
                 </div>
             </nav>
 
-        <table>
+        <table class="table table-striped table-light">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -85,7 +85,7 @@
                     <th>Track</th>
                     <th>Points</th>
                     <th></th>
-                    <th><a href="addResult.php">Add</a></th>
+                    <th><a class="btn btn-primary" href="addResult.php">Add</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -99,8 +99,8 @@
                         echo '<td>'.$result->raceRound.'</td>';
                         echo '<td>'.$result->raceTrack.'</td>';
                         echo '<td>'.$result->resultPoints.'</td>';
-                        echo '<td><a href="updateResult.php?resultId='.$result->resultId.'">Update</a></td>';
-                        echo '<td><a href="result.php?resultId='.$result->resultId.'">Delete</a></td>';
+                        echo '<td><a class="btn btn-success" href="updateResult.php?resultId='.$result->resultId.'">Update</a></td>';
+                        echo '<td><a class="btn btn-danger" href="result.php?resultId='.$result->resultId.'">Delete</a></td>';
                         echo '</tr>';
                     }
                 ?>

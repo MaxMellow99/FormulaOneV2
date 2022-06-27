@@ -81,15 +81,18 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Firstname: <input type="text" name="firstname"><br>
-            Lastname: <input type="text" name="lastname"><br>
-            Number: <input type="number" name="number"><br>
-            Code: <input type="text" name="code"><br>
-            Birthdate: <input type="date" name="birthdate"><br>
-            Nationality: <input type="text" name="nationality"><br>
-            <input type="submit" value="Add"><br>
-            <a href="driver.php">Cancel</a>
+            <H1 class="text-center text-light">Adding a driver</H1>
+        <form method="Post" class="d-flex justify-content-center">
+            <div>
+                <label class="text-light">Firstname:</label> <input class="form-control" type="text" name="firstname"><br>
+                <label class="text-light">Lastname:</label> <input class="form-control" type="text" name="lastname"><br>
+                <label class="text-light">Number:</label> <input class="form-control" type="number" name="number"><br>
+                <label class="text-light">Driver code:</label> <input class="form-control" type="text" name="code"><br>
+                <label class="text-light">Birthdate:</label> <input class="form-control" type="date" name="birthdate"><br>
+                <label class="text-light">Nationality:</label> <input class="form-control" type="text" name="nationality"><br>
+                <input class="btn btn-primary btn-lg" type="submit" value="Add"><br><br>
+                <button class="btn btn-warning"><a href="driver.php">Cancel</a></button>
+            </div>
         </form>
     </body>
 </html>

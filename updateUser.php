@@ -86,17 +86,20 @@
                     </ul>
                 </div>
             </nav>
-        <form method="Post">
-            Username: <input type="text" name="username" value="<?php echo $user->userInfoUsername ?>"><br>
-            Firstname: <input type="text" name="firstname" value="<?php echo $user->userInfoFirstname ?>"><br>
-            Lastname: <input type="text" name="lastname" value="<?php echo $user->userInfoLastname ?>"><br>
-            Email: <input type="email" name="email" value="<?php echo $user->userInfoEmail ?>"><br>
-            Is Admin: <input type="number" name="isadmin" value="<?php echo $user->userInfoAdmin ?>" max="1"><br>
-            Activation Code: <input type="text" name="activation" value="<?php echo $user->userActivationCode ?>"><br>
-            Is Active: <input type="number" name="isactive" value="<?php echo $user->userIsActive ?>" max="1"><br>
-            Profile Picture: <input type="file" name="image"><br>
-            <input type="submit" value="Update"><br>
-            <a href="user.php">Cancel</a>
+            <H1 class="text-center text-light">Updating <?php echo $user->userInfoUsername ?></H1>
+        <form method="Post" class="d-flex justify-content-center">
+            <div>
+                <label class="text-light">Username:</label> <input class="form-control" type="text" name="username" value="<?php echo $user->userInfoUsername ?>"><br>
+                <label class="text-light">Firstname:</label> <input class="form-control" type="text" name="firstname" value="<?php echo $user->userInfoFirstname ?>"><br>
+                <label class="text-light">Lastname:</label> <input class="form-control" type="text" name="lastname" value="<?php echo $user->userInfoLastname ?>"><br>
+                <label class="text-light">Email:</label> <input class="form-control" type="email" name="email" value="<?php echo $user->userInfoEmail ?>"><br>
+                <label class="text-light">Is Admin:</label> <input class="form-control" type="number" name="isadmin" value="<?php echo $user->userInfoAdmin ?>" max="1"><br>
+                <label class="text-light">Activation Code:</label> <input class="form-control" type="text" name="activation" value="<?php echo $user->userActivationCode ?>"><br>
+                <label class="text-light">Is Active:</label> <input class="form-control" type="number" name="isactive" value="<?php echo $user->userIsActive ?>" max="1"><br>
+                <label class="text-light">Profile Picture:</label> <input class="form-control" type="file" name="image"><br>
+                <input class="btn btn-primary" type="submit" value="Update"><br><br>
+                <button class="btn btn-warning"><a href="user.php">Cancel</a></button>
+            </div>
         </form>
     </body>
 </html>
