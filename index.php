@@ -4,7 +4,6 @@ session_start();
 require_once "managers/personmanager.php";
 require_once "managers/standingmanager.php";
 
-
 //als je bent ingelogd.
 if (isset($_SESSION['id'])) {
     $personmanager = new personmanager();

@@ -3,10 +3,12 @@ require_once "database.php";
 
 class GambleManager
 {
-    public static function GetGamble() {
+    public static function GetGamble($username) {
         global $conn;
 
-        $stmt = $conn->prepare('SELECT gambleId, gamblePosition, gamblePoints, userInfoUsername, raceTrack, driverFirstname, driverLastname, driverCode FROM gamble LEFT JOIN userinfo ON userinfo.userInfoId = gamble.userInfoId LEFT JOIN driver ON driver.driverId = gamble.driverId LEFT JOIN race ON race.raceId = gamble.raceId ORDER BY driverLastname ASC');
+        $stmt = $conn->prepare('SELECT gambleId, gamblePosition, gamblePoints, userInfoUsername, raceTrack, driverFirstname, driverLastname, driverCode FROM gamble LEFT JOIN userinfo ON userinfo.userInfoId = gamble.userInfoId LEFT JOIN driver ON driver.driverId = gamble.driverId LEFT JOIN race ON race.raceId = gamble.raceId WHERE userInfoUsername = ? ORDER BY driverLastname ASC');
+        $stmt->bindValue(1, $username);
+
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -52,11 +54,13 @@ class GambleManager
         $stmt2 = $conn->prepare("
         SELECT 
             sortingtable.sortPosition AS gok, 
-            (SELECT result.resultPosition FROM result WHERE result.driverId = driver.driverId) as resultaat
+            result.resultPosition as resultaat
         FROM 
             sortingtable
         JOIN 
             driver ON sortingtable.driverId = driver.driverId
+		JOIN
+			result ON result.driverId = driver.driverId;
         ");
         $stmt2->execute();
 
@@ -99,4 +103,50 @@ class GambleManager
         $stmt->execute();
     }
 
+    public static function ClearGamble($username) {
+        globaL $conn;
+
+        $stmt = $conn->prepare('DELETE gamble 
+        FROM gamble 
+        LEFT JOIN userinfo 
+            ON userinfo.userInfoId = gamble.userInfoId 
+        LEFT JOIN driver 
+            ON driver.driverId = gamble.driverId 
+        LEFT JOIN race ON race.raceId = gamble.raceId
+        WHERE userInfoUsername = ?');
+
+        $stmt->bindValue(1, $username);
+        $stmt->execute();
+    }
+
+    public static function InsertFinalGamble($username, $racename, $points){
+        global $conn;
+
+        $stmt = $conn->prepare('INSERT INTO finalgamble(userInfoUsername, raceTrack, Points) VALUES (?, ?, ?)');
+        $stmt->bindValue(1,$username);
+        $stmt->bindValue(2,$racename);
+        $stmt->bindValue(3, $points);
+
+        $stmt->execute();
+    }
+
+    public static function GetFinalGambleAll($username){
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM finalgamble WHERE userInfoUsername = ?');
+        $stmt->bindValue(1, $username);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+    public static function GetFinalGambleSpecific($username, $raceTrack){
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM finalgamble WHERE userInfoUsername = ? AND raceTrack = ?');
+        $stmt->bindValue(1, $username);
+        $stmt->bindValue(2, $raceTrack);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 }
